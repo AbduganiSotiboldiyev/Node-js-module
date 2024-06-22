@@ -41,6 +41,11 @@ const server = http.createServer((req,res) =>{
 
                 res.end(content)
             })
+        }else if(req.url === "/api/admin") {
+        res.writeHead(200 , {"Content-Type" : "text/jsoon"})
+
+            const admin = {name : "Abdugani", job : "freelancer", country : "Uzbekistan"}
+            res.end(JSON.stringify(admin))
         }
 
     } else if(req.method === "POST") {
